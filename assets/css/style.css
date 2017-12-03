@@ -1,0 +1,24 @@
+body {
+	color: #025AA5;
+}
+
+
+.background-image{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.button-option {
+	min-width: 150px;
+}
+
+.button-rows {
+	opacity: 0;
+}
+
+.title {
+	opacity: 0;
+}
