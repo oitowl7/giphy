@@ -1,25 +1,28 @@
- $(document).ready(function() {
- 	fadeInBack();
+var fadeTime = 1500; 
+$(document).ready(function() {
+ 	fadeInBack(fadeTime);
 });
 
 
-var fadeInBack = function(){
-	$('.background-image').animate({ opacity: 1 }, { duration:1500 });
-	// $('.background-image').promise().done(function(){
-	// 	fadeInButtons();
-	// });
+var fadeInBack = function(time){
+	$('.background-image').animate({ opacity: 1 }, { duration: time });
 	setTimeout(function(){
-    	fadeInTitle();
-	}, 1500);
+    	fadeInTitle(time);
+	}, time);
 }
-var fadeInTitle = function(){
-	$('.title').animate({ opacity: 1 }, { duration:1500 });
+var fadeInTitle = function(time){
+	$('.title').animate({ opacity: 1 }, { duration: time });
  	setTimeout(function(){
-    	fadeInButtons();
-	}, 1500);
+    	fadeInRemainder(time);
+    	fadeInText(time);
+	}, time);
 }
 
- var fadeInButtons = function(){
- 	$(".button-rows").animate({opacity: 1}, {duration: 1500 });
+ var fadeInRemainder = function(time){
+ 	$(".remainder").animate({opacity: .75}, {duration: time });
+ }
+
+ var fadeInText = function(time){
+ 	$("#input-joke").animate({opacity: 1}, {duration: time});
  }
 

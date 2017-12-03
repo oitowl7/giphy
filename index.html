@@ -15,21 +15,38 @@
 </head>
 
 <body>
+	<br><br>
 <!-- background image resizable -->
 <img src="assets/images/background.jpg" class="background-image">
 <div class="container">
 	<div class="title text-center">
-		<h1>What would you like to see a cat doing/holding? Type it here!</h1>
+		<h1>What would you like to see a cat doing/holding?</h1>
 	</div>
-	<div class="button-rows">
+	<div class="button-rows remainder">
 		<button class="button-option btn btn-lg btn-primary" id="sunglasses">Sunglasses</button>
 		<button class="button-option btn btn-lg btn-primary" id="machine-gun">Machine Gun</button>
-
-
-
+		<button class="button-option btn btn-lg btn-primary" id="napping">Napping</button>
+		<button class="button-option btn btn-lg btn-primary" id="yarn">Yarn</button>
+		<button class="button-option btn btn-lg btn-primary" id="startled">Startled</button>
+		<button class="button-option btn btn-lg btn-primary" id="snow">Snow</button>
+		<button class="button-option btn btn-lg btn-primary" id="box">Box</button>
+		<button class="button-option btn btn-lg btn-primary" id="water">Water</button>
+		<button class="button-option btn btn-lg btn-primary" id="cup">Cup</button>
+		<button class="button-option btn btn-lg btn-primary" id="laser">Laser</button>
 	</div>
 
+	<div class="input-area remainder">
+		<div class="form-group">
+			<label for="input-box">Enter Item/Situation: </label>
+			<input type="text" class="form-control" id="input-box" placehoder="Input item here">
+			<small id="input-joke" class="form-text text-muted">Try to give the cat something. It is a cat though. It probably won't want it.</small>
+		</div>
+		<button class="button-search btn btn-primary" id="search-button">Search</button>
 
+	</div>
+	
+	<div class="append-area remainder">
+	</div>
 
 
 </div>
