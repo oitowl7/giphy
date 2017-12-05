@@ -122,20 +122,16 @@ var displayGif = function(img, rating, response) {
 	$(".area-append-images").append(img);
 	$(".area-append-images").append(rating);
 
-	$(".appended-image").on('click', function() {
+	$(".appended-image").unbind('click').on('click', function() {
 		var state = $(this).attr("state");
 		console.log("outside state "+ state);
 		if (state === "still") {
-			// console.log("if");
-			// console.log("Inside 1 state " + state);
 		 	$(this).attr("src", $(this).attr("data-animate"));
 		 	$(this).attr("state", "animate");
 		} 
 		else if (state === "animate") {
-			// console.log("else")
 			$(this).attr("src", $(this).attr("data-still"));
 			$(this).attr("state", "still");
 	  	}
-	  	// console.log("after state " + state)
 	});
 }
