@@ -1,3 +1,3 @@
 # giphy
 
-last version pushed: 1.03
+last version pushed: 1.04

@@ -1,4 +1,4 @@
-var fadeTime = 200; 
+var fadeTime = 1000; 
 var key = "TCkHB8NLpmc7rzlLBXdRPtPUx9FaVEKx";
 var searchItems = ["Sunglasses", "Machine Gun", "Napping", "Yarn", "Startled", "Snow", "Box", "Lightsaber", "Cup", "Laser"]
 
@@ -30,6 +30,8 @@ $(document).ready(function() {
 	$("#clear-button").on('click', function(){
 		$(".area-append-images").empty();
 	});
+
+
 
 });
 
@@ -81,11 +83,13 @@ var buttonAnimate = function(div, element, time) {
 	$("#"+element)
 	.animate({left: "63%"}, {queue: false, duration: halfTime})
 	.animate({top: "50%"}, halfTime);
+	
 	setTimeout(function(){
-	$("#"+element).animate({opacity: 0}, halfTime)
+		$("#"+element).animate({opacity: 0}, halfTime)
 	}, halfTime);
+	
 	setTimeout(function(){
-	$("#"+element).remove();
+		$("#"+element).remove();
 	}, halfTime * 2)
 }
 
@@ -113,7 +117,19 @@ var rng = function(){
 var appendDivs = function(rng, response){
 	var pictureURL = response.data[rng].images.original_still.url;
 	var pictureRating = response.data[rng].rating;
-	var newImg = '<img src="' + pictureURL + '" class="appended-image" state="still" data-animate= "' + response.data[rng].images.original.url +'"" data-still="' + response.data[rng].images.original_still.url +'" alt="GIF">';
+	var newImg = $('<img src="' + pictureURL + '" class="appended-image" state="still" data-animate= "' + response.data[rng].images.original.url +'"" data-still="' + response.data[rng].images.original_still.url +'" alt="GIF">');
+	newImg.on('click', function() {
+		var state = $(this).attr("state");
+		console.log("outside state "+ state);
+		if (state === "still") {
+	 		$(this).attr("src", $(this).attr("data-animate"));
+	 		$(this).attr("state", "animate");
+		} 
+		else if (state === "animate") {
+			$(this).attr("src", $(this).attr("data-still"));
+			$(this).attr("state", "still");
+  		}
+	})
 	var ratingDiv = "<div class='ratings-div'>Rating: " + response.data[rng].rating + "</div>";
 	displayGif(newImg, ratingDiv, response);
 }
@@ -121,17 +137,4 @@ var appendDivs = function(rng, response){
 var displayGif = function(img, rating, response) {
 	$(".area-append-images").append(img);
 	$(".area-append-images").append(rating);
-
-	$(".appended-image").unbind('click').on('click', function() {
-		var state = $(this).attr("state");
-		console.log("outside state "+ state);
-		if (state === "still") {
-		 	$(this).attr("src", $(this).attr("data-animate"));
-		 	$(this).attr("state", "animate");
-		} 
-		else if (state === "animate") {
-			$(this).attr("src", $(this).attr("data-still"));
-			$(this).attr("state", "still");
-	  	}
-	});
 }
