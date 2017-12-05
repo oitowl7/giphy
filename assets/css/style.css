@@ -51,6 +51,16 @@ body {
 
 }
 .appended-image {
-	width: 400px;
+	width: 40%;
 	height: auto;
+	margin-top: 10px;
+}
+.ratings-div {
+	margin: 10px 0;
+	padding-bottom: 5px;
+	border-bottom: 2px solid black;
+	width: 40%;
+}
+.clear-button {
+	margin-left: 10px;
 }
