@@ -26,4 +26,4 @@ As I mentioned above, my biggest issue still outstanding is that the "button" th
 
 ## Additional Images
 If you haven't already, find this gif of Samuel L Jackson on a cat face. You wont regret it
-[Sam Jackson](https://i.imgur.com/ELYKScq.jpg)
+![Sam Jackson](https://i.imgur.com/ELYKScq.jpg)
